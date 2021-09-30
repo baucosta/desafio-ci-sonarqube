@@ -1,0 +1,25 @@
+name: desafio-ci-sonarqube
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Testing application
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - run: npm run test
+
+      # - name: SonarCloud scan
+      #   uses: sonarsource/sonarcloud-github-action@master
+      #   env: 
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN}}
