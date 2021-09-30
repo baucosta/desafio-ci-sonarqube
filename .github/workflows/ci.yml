@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  build:
+  desafio-ci-build:
 
     runs-on: ubuntu-latest
 
